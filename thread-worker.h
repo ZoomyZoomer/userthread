@@ -20,7 +20,7 @@
 /* Function Declarations: */
 
 /* create a new thread */
-int worker_create(worker_t *thread, pthread_attr_t *attr, void *(*function)(void *), void *arg);
+int worker_create(worker_t *thread, pthread_attr_t *attr, void* (*function)(void *), void *arg);
 
 /* give CPU pocession to other user level worker threads voluntarily */
 int worker_yield();

@@ -15,14 +15,7 @@ typedef enum {
 } thread_state;
 
 /* Define thread context structure */
-typedef struct {
-    /* Add thread context information as needed */
-    // For example, registers, instruction pointer, stack pointer, etc.
-    // Assuming a simple structure here for demonstration purposes
-    void* registers;
-    void* instruction_pointer;
-    void* stack_pointer;
-} thread_context;
+
 
 /* Define thread stack structure */
 typedef struct {
@@ -36,9 +29,9 @@ typedef struct {
 typedef struct TCB
 {
     /* Add important states in a thread control block */
-    worker_t thread_id;         // Thread ID (a unique ID to identify each worker thread)
+    int thread_id;         // Thread ID (a unique ID to identify each worker thread)
     thread_state status;        // Thread status
-    thread_context context;     // Thread context
+    ucontext_t context;     // Thread context
     thread_stack stack;         // Thread stack
     int priority;               // Thread priority (if applicable)
     // And more, depending on your requirements...
